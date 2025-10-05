@@ -1,6 +1,6 @@
 # Parent class
 class Device:
-    def _init_(self, brand, model):
+    def __init__(self, brand, model):   #  Fixed: __init_
         self.brand = brand
         self.model = model
 
@@ -9,8 +9,8 @@ class Device:
 
 # Child class inheriting from Device
 class Smartphone(Device):
-    def _init_(self, brand, model, storage, battery):
-        super()._init_(brand, model)  # Call parent constructor
+    def __init__(self, brand, model, storage, battery):   #  Fixed: __init_
+        super().__init__(brand, model)  #  Call parent constructor correctly
         self.storage = storage
         self.battery = battery
         self.__is_locked = True  # Encapsulated attribute (private)
